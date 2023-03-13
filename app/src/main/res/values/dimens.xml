@@ -12,4 +12,7 @@
     <!--    Font Sizes-->
     <dimen name="font_size_12x">24sp</dimen>
 
+    <!--    Radius Sizes-->
+    <dimen name="radius_25x">100dp</dimen>
+
 </resources>
