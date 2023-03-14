@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="SudokuView">
+    <declare-styleable name="BoardView">
         <attr name="boardColor" format="color" />
         <attr name="cellColor" format="color" />
         <attr name="boxColor" format="color" />
