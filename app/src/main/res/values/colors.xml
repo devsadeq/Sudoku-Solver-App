@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="mango_tango">#FF8638</color>
+    <color name="bright_gray">#ECEFF7</color>
+    <color name="shadow_blue">#8088AA</color>
+    <color name="cadet_blue">#B2B7CC</color>
+    <color name="dark_liver">#544D54</color>
+    <color name="asparagus">#88AA80</color>
+
 </resources>

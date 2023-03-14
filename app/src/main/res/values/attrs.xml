@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BoardView">
+        <attr name="boardColor" format="color" />
+        <attr name="cellColor" format="color" />
+        <attr name="boxColor" format="color" />
+        <attr name="selectedCellColor" format="color" />
+        <attr name="highlightedCellColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="selectedTextColor" format="color" />
+        <attr name="solvedTextColor" format="color" />
+    </declare-styleable>
+</resources>
