@@ -1,21 +1,19 @@
 package com.example.sudokusolver
 
 import android.view.View
+import com.example.sudokusolver.Constants.BOARD_SIZE
+import com.example.sudokusolver.Constants.BOX_SIZE
+import com.example.sudokusolver.Constants.EMPTY_CELL
+import com.example.sudokusolver.Constants.INITIAL_SELECTION
+import com.example.sudokusolver.Constants.MAX_VALUE
+import com.example.sudokusolver.Constants.MIN_VALUE
 
 class SolverImpl : Solver {
-    companion object {
-        const val EMPTY_CELL = 0
-        const val BOARD_SIZE = 9
-        const val BOX_SIZE = 3
-        const val MIN_VALUE = 1
-        const val MAX_VALUE = 9
-    }
-
     private val board: Array<IntArray> = Array(BOARD_SIZE) { IntArray(BOARD_SIZE) { EMPTY_CELL } }
     private val emptyCellsPositions: MutableList<Pair<Int, Int>> = mutableListOf()
     private val userInsertedNumbers: MutableMap<Pair<Int, Int>, Int> = mutableMapOf()
-    private var selectedRow = -1
-    private var selectedColumn = -1
+    private var selectedRow = INITIAL_SELECTION
+    private var selectedColumn = INITIAL_SELECTION
 
     override fun solve(view: View): Boolean {
         if (emptyCellsPositions.isEmpty()) return true
@@ -35,14 +33,14 @@ class SolverImpl : Solver {
     }
 
     override fun insertNumber(number: Int) {
-        if (selectedRow != -1 && selectedColumn != -1) {
+        if (selectedRow != INITIAL_SELECTION && selectedColumn != INITIAL_SELECTION) {
             board[selectedRow][selectedColumn] = number
             userInsertedNumbers[Pair(selectedRow, selectedColumn)] = number
         }
     }
 
     override fun clearNumber() {
-        if (selectedRow != -1 && selectedColumn != -1) {
+        if (selectedRow != INITIAL_SELECTION && selectedColumn != INITIAL_SELECTION) {
             board[selectedRow][selectedColumn] = EMPTY_CELL
             userInsertedNumbers.remove(Pair(selectedRow, selectedColumn))
         }
@@ -56,8 +54,8 @@ class SolverImpl : Solver {
         }
         emptyCellsPositions.clear()
         userInsertedNumbers.clear()
-        selectedRow = -1
-        selectedColumn = -1
+        selectedRow = INITIAL_SELECTION
+        selectedColumn = INITIAL_SELECTION
     }
 
     override fun getBoard(): Array<IntArray> = board
@@ -72,6 +70,19 @@ class SolverImpl : Solver {
             }
         }
         return emptyCellsPositions
+    }
+
+    override fun getSelectedValue(row: Int, column: Int): Int {
+        return board[row][column]
+    }
+
+    override fun getSelection(): Pair<Int, Int> {
+        return Pair(selectedRow, selectedColumn)
+    }
+
+    override fun setSelection(row: Int, column: Int) {
+        selectedRow = row
+        selectedColumn = column
     }
 
     override fun isBoardValid(row: Int, column: Int, number: Int): Boolean {
@@ -102,4 +113,17 @@ class SolverImpl : Solver {
     override fun isUserInserted(row: Int, column: Int): Boolean {
         return userInsertedNumbers.containsKey(Pair(row, column))
     }
+
+    override fun isSelected(row: Int, column: Int): Boolean {
+        return selectedRow == row && selectedColumn == column
+    }
+
+    override fun isNotEmpty(row: Int, column: Int): Boolean {
+        return board[row][column] != EMPTY_CELL
+    }
+
+    override fun isSelectedBox(row: Int, column: Int): Boolean {
+        return row != selectedRow % BOX_SIZE || column != selectedColumn % BOX_SIZE
+    }
+
 }
