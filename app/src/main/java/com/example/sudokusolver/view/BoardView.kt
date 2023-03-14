@@ -1,4 +1,4 @@
-package com.example.sudokusolver
+package com.example.sudokusolver.view
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -8,11 +8,13 @@ import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.example.sudokusolver.Constants.BIG_STROKE_WIDTH
-import com.example.sudokusolver.Constants.BOARD_SIZE
-import com.example.sudokusolver.Constants.BOX_SIZE
-import com.example.sudokusolver.Constants.MEDIUM_STROKE_WIDTH
-import com.example.sudokusolver.Constants.SMALL_STROKE_WIDTH
+import com.example.sudokusolver.utils.Constants.BIG_STROKE_WIDTH
+import com.example.sudokusolver.utils.Constants.BOARD_SIZE
+import com.example.sudokusolver.utils.Constants.BOX_SIZE
+import com.example.sudokusolver.utils.Constants.MEDIUM_STROKE_WIDTH
+import com.example.sudokusolver.utils.Constants.SMALL_STROKE_WIDTH
+import com.example.sudokusolver.R
+import com.example.sudokusolver.logic.SolverImpl
 
 class BoardView(context: Context, attrs: AttributeSet) : View(context, attrs), Board {
 

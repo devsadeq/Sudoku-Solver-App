@@ -1,4 +1,4 @@
-package com.example.sudokusolver
+package com.example.sudokusolver.logic
 
 import android.view.View
 

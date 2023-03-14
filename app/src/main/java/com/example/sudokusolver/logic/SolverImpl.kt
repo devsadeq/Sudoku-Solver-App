@@ -1,12 +1,12 @@
-package com.example.sudokusolver
+package com.example.sudokusolver.logic
 
 import android.view.View
-import com.example.sudokusolver.Constants.BOARD_SIZE
-import com.example.sudokusolver.Constants.BOX_SIZE
-import com.example.sudokusolver.Constants.EMPTY_CELL
-import com.example.sudokusolver.Constants.INITIAL_SELECTION
-import com.example.sudokusolver.Constants.MAX_VALUE
-import com.example.sudokusolver.Constants.MIN_VALUE
+import com.example.sudokusolver.utils.Constants.BOARD_SIZE
+import com.example.sudokusolver.utils.Constants.BOX_SIZE
+import com.example.sudokusolver.utils.Constants.EMPTY_CELL
+import com.example.sudokusolver.utils.Constants.INITIAL_SELECTION
+import com.example.sudokusolver.utils.Constants.MAX_VALUE
+import com.example.sudokusolver.utils.Constants.MIN_VALUE
 
 class SolverImpl : Solver {
     private val board: Array<IntArray> = Array(BOARD_SIZE) { IntArray(BOARD_SIZE) { EMPTY_CELL } }

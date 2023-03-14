@@ -1,4 +1,4 @@
-package com.example.sudokusolver
+package com.example.sudokusolver.utils
 
 object Constants {
     const val EMPTY_CELL = 0

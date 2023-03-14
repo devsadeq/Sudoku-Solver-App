@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sudokusolver.view.BoardView
 
 class MainActivity : AppCompatActivity() {
     private val board by lazy { findViewById<BoardView>(R.id.boardView) }
